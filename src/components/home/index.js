@@ -5,6 +5,7 @@ import styles from './style.less';
 export default class Home extends Component {
   static contextTypes = {
     initData: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    fetch: PropTypes.func,
   }
 
   constructor(props, context) {
@@ -13,6 +14,16 @@ export default class Home extends Component {
     this.state = {
       data: context.initData,
     };
+  }
+
+  componentDidMount() {
+    if (!this.state.data) {
+      this.context.fetch().then((res) => {
+        this.setState({
+          data: res,
+        });
+      });
+    }
   }
 
   render() {

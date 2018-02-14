@@ -1,6 +1,6 @@
 ## react-ssr-basic
 
-use the most basic tools (webpack, babel) to demostrate how react ssr works.
+use the most basic tools (webpack, babel) to demonstrate how react ssr works.
 
 **features:**
 - isomorphic 

@@ -59,7 +59,6 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
-    "express": "^4.16.2",
     "isomorphic-style-loader": "^4.0.0",
     "koa": "^2.4.1",
     "koa-static": "^4.0.2",
@@ -67,7 +66,6 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "webpack-dev-server": "^2.11.1"
+    "react-router-dom": "^4.2.2"
   }
 }
