@@ -1,0 +1,73 @@
+{
+  "name": "react-ssr-basic",
+  "version": "0.1.0",
+  "description": "a simple ssr example with the most basic tools",
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "Firefox ESR",
+    "not ie < 9"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": {
+    "name": "chrishchen"
+  },
+  "scripts": {
+    "start": "rm -rf ./build/* && nodemon --watch server --watch src --watch util --exec babel-node ./server/server.js",
+    "build": "rm -rf ./build/* && babel-node build.js",
+    "deploy": "cross-env NODE_ENV=production babel-node app.js"
+  },
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/node": "^7.0.0-beta.40",
+    "@babel/polyfill": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/preset-react": "^7.0.0-beta.40",
+    "@babel/preset-stage-0": "^7.0.0-beta.40",
+    "@babel/register": "^7.0.0-beta.40",
+    "assets-webpack-plugin": "^3.5.1",
+    "autoprefixer": "^7.2.5",
+    "babel-core": "^7.0.0-0",
+    "babel-eslint": "^8.1.2",
+    "babel-jest": "^20.0.4",
+    "babel-loader": "8.0.0-beta.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "cross-env": "^5.1.3",
+    "css-loader": "^0.28.9",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "json-loader": "^0.5.7",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "nodemon": "^1.14.12",
+    "postcss-loader": "^2.0.10",
+    "raw-loader": "^0.5.1",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.19.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-middleware": "^2.0.4",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "isomorphic-style-loader": "^4.0.0",
+    "koa": "^2.4.1",
+    "koa-static": "^4.0.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "webpack-dev-server": "^2.11.1"
+  }
+}
