@@ -45,7 +45,6 @@ export default {
           loader: 'babel-loader',
           options: {
             babelrc: false,
-            plugins: ['transform-async-to-generator'],
             presets: [
               [
                 '@babel/preset-env',
