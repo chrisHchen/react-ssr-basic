@@ -18,7 +18,7 @@ export default class Home extends Component {
 
   componentDidMount() {
     if (!this.state.data) {
-      this.context.fetch().then((res) => {
+      this.props.fetch().then((res) => {
         this.setState({
           data: res,
         });

@@ -7,24 +7,24 @@ import asyncRender from '../util/asyncRender';
 
 export default async () => {
   const pathname = window.location.pathname;
-  const { Cmp, chunkName, fetch } = await asyncRender({ url: pathname });
+  const { Cmp, chunkName } = await asyncRender({ url: pathname });
   return (
     <Router>
-      <Layout fetch={fetch}>
+      <Layout>
         {
           routes.map((r) => {
             if (r.chunkName === chunkName) {
               return (<Route
                 path={r.path}
                 exact={r.exact}
-                component={Cmp}
+                component={props => <Cmp fetch={r.fetch} {...props} />}
                 key={r.path}
               />);
             } else {
               return (<Route
                 path={r.path}
                 exact={r.exact}
-                component={Bundled(r.load)}
+                component={Bundled({ load: r.load, fetch: r.fetch})}
                 key={r.path}
               />);
             }

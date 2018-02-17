@@ -31,13 +31,13 @@ class Bundle extends React.Component {
   }
 }
 
-const Bundled = load =>
+const Bundled = p =>
   props => (
     <Bundle
-      load={load}
+      {...p}
     >
       {Comp => (Comp
-        ? <Comp {...props} />
+        ? <Comp fetch={p.fetch} {...props} />
         : <Loading />
       )}
     </Bundle>
