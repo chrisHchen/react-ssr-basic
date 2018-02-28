@@ -34,7 +34,7 @@ export default class Welcome extends Component {
       <div>
         <center>
           <div className={styles.welcome}>Welcome~</div>
-          <div>{data}</div>
+          <div>{data && data.desc}</div>
           <div className={styles.bgImage} />
         </center>
       </div>

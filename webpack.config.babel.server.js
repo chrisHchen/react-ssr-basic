@@ -20,6 +20,7 @@ export default {
       'process.env.NODE_ENV': JSON.stringify(ENV),
     }),
   ],
+
   entry: {
     server: ['@babel/polyfill', path.resolve(__dirname, './server/handler.js')],
   },

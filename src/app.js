@@ -7,7 +7,7 @@ import asyncRender from '../util/asyncRender';
 
 export default async () => {
   const pathname = window.location.pathname;
-  const { Cmp, chunkName } = await asyncRender({ url: pathname });
+  const { Cmp, chunkName } = await asyncRender({ url: pathname, isClient: true });
   return (
     <Router>
       <Layout>

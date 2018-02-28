@@ -4,13 +4,17 @@ import ReactDOM from 'react-dom/server';
 import asyncRender from '../util/asyncRender';
 import Html from './html';
 import Layout from '../src/components/layout';
+import NoFound from '../src/components/noFound';
 
 export default async (ctx) => {
   const props = {};
   const { Cmp, data, chunkName} = await asyncRender({ url: ctx.req.url});
   // inculde StaticRouter to avoid warning...
   const context = {};
-
+  if (!Cmp) {
+    ctx.body = ReactDOM.renderToString(<NoFound />);
+    return;
+  }
   props.children = ReactDOM.renderToString(
     <StaticRouter context={context}>
       <Layout initData={data}>

@@ -6,7 +6,7 @@ import styles from './style.less';
 export default class Layout extends Component {
   static childContextTypes = {
     initData: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-    fetch: PropTypes.func,
+    // fetch: PropTypes.func,
   }
 
   getChildContext() {
@@ -14,9 +14,9 @@ export default class Layout extends Component {
     if (typeof window !== 'undefined' && window.__initState__) {
       const initData = window.__initState__;
       delete window.__initState__;
-      return { initData, fetch: this.props.fetch };
+      return { initData };
     } else {
-      return { initData: this.props.initData, fetch: this.props.fetch };
+      return { initData: this.props.initData };
     }
   }
 

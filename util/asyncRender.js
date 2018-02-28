@@ -1,7 +1,7 @@
 import { matchPath } from 'react-router';
 import routes from '../routes';
 
-export default async ({url}) => {
+export default async ({ url, isClient}) => {
   const route = routes.find(r => matchPath(url, {
     path: r.path,
     exact: true,
@@ -9,7 +9,10 @@ export default async ({url}) => {
 
   if (route) {
     const Cmp = await route.load();
-    const data = await route.fetch();
+    let data = {};
+    if (!isClient) {
+      data = await route.fetch();
+    }
 
     return ({
       Cmp: Cmp.default || Cmp,

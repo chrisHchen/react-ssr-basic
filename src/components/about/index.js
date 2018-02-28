@@ -32,7 +32,7 @@ export default class About extends Component {
     } = this.state;
     return (
       <div className={styles.about}>
-        <div>{data}</div>
+        <div>{data && data.desc}</div>
         <center>This is the About page</center>
       </div>
     );
